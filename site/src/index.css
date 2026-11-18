@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-sable text-encre font-sans antialiased; }
+  h1, h2, h3 { @apply font-display tracking-tight; }
+  ::selection { background: #ffc23d; color: #13213c; }
+}
+
+@layer components {
+  /* Papier quadrillé, comme un cahier de maths */
+  .quadrillage {
+    background-image:
+      linear-gradient(rgba(19,33,60,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(19,33,60,.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+  .conteneur { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-soleil/60; }
+  .btn-primaire { @apply btn bg-encre text-sable hover:bg-encre-2 hover:-translate-y-0.5 shadow-douce; }
+  .btn-corail { @apply btn bg-corail text-white hover:brightness-105 hover:-translate-y-0.5 shadow-douce; }
+  .btn-ligne { @apply btn border-2 border-encre text-encre hover:bg-encre hover:text-sable; }
+  .carte { @apply rounded-[1.75rem] bg-white border-[1.5px] border-encre p-7 shadow-[6px_6px_0_#13213c] transition-transform duration-200; }
+  .carte-hover { @apply hover:-translate-y-1 hover:shadow-[9px_9px_0_#13213c]; }
+  .etiquette { @apply inline-flex items-center gap-1.5 rounded-full border-[1.5px] border-encre bg-white px-3 py-1 text-xs font-bold uppercase tracking-wider; }
+  .surligne { background: linear-gradient(transparent 58%, #ffc23d 58%, #ffc23d 90%, transparent 90%); padding: 0 .1em; }
+  .champ { @apply w-full rounded-xl border-[1.5px] border-encre/25 bg-white px-4 py-3 text-encre placeholder:text-encre/40 focus:border-encre focus:outline-none focus:ring-4 focus:ring-lagon/20; }
+  .libelle { @apply mb-1.5 block text-sm font-semibold; }
+}
+
+@keyframes flotte { 0%,100% { transform: translateY(0) rotate(var(--r,0deg)); } 50% { transform: translateY(-10px) rotate(var(--r,0deg)); } }
+.flotte { animation: flotte 6s ease-in-out infinite; }
+@keyframes apparait { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+.apparait { animation: apparait .7s cubic-bezier(.2,.7,.2,1) both; }
+@media (prefers-reduced-motion: reduce) { .flotte, .apparait { animation: none; } }
