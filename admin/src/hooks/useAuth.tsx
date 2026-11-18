@@ -2,7 +2,12 @@ import { createContext, useContext, useEffect, useState, ReactNode } from "react
 import { Session, User } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
 
-const ALLOWED_ADMIN_EMAIL = "guillaumeclarys@gmail.com";
+const ALLOWED_ADMIN_EMAILS = [
+  "guillaumeclarys@gmail.com",
+  "contact@polykids.pf",
+];
+const isAllowed = (email?: string | null) =>
+  !!email && ALLOWED_ADMIN_EMAILS.includes(email.toLowerCase());
 
 interface AuthContextType {
   session: Session | null;
@@ -23,7 +28,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     // Set up listener FIRST
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (_event, newSession) => {
-        if (newSession && newSession.user.email !== ALLOWED_ADMIN_EMAIL) {
+        if (newSession && !isAllowed(newSession.user.email)) {
           supabase.auth.signOut();
           setSession(null);
           setUnauthorized(true);
@@ -38,7 +43,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     // Then check existing session
     supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session && session.user.email !== ALLOWED_ADMIN_EMAIL) {
+      if (session && !isAllowed(session.user.email)) {
         supabase.auth.signOut();
         setSession(null);
         setUnauthorized(true);
