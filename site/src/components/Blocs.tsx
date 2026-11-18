@@ -110,10 +110,10 @@ export function AppelAction({ titre = "Prêt à reprendre confiance ?", texte = 
 
 export function EnTetePage({ sur, titre, intro, image = "/images/salle-groupe.webp" }: { sur: string; titre: React.ReactNode; intro: string; couleur?: string; image?: string }) {
   return (
-    <FondImage image={image} voile="bg-gradient-to-b from-encre/75 via-encre/55 to-encre/70" className="pb-24 pt-40 sm:pt-48">
+    <FondImage image={image} voile="bg-gradient-to-br from-encre/90 via-encre/70 to-lagon/60" className="pb-24 pt-40 sm:pt-48">
       <div className="conteneur apparait">
-        <p className="surtitre !text-white/70">{sur}</p>
-        <h1 className="mt-3 max-w-3xl text-5xl leading-[1.05] sm:text-6xl [&_.surligne]:text-white [&_.surligne]:italic">{titre}</h1>
+        <p className="surtitre !text-corail">{sur}</p>
+        <h1 className="mt-3 max-w-3xl text-5xl leading-[1.05] sm:text-6xl [&_.surligne]:text-corail">{titre}</h1>
         <p className="mt-5 max-w-2xl text-xl text-white/80">{intro}</p>
       </div>
     </FondImage>

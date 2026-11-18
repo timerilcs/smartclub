@@ -10,9 +10,9 @@ function Hero() {
   return (
     <FondImage image={visuel?.url || "/images/groupe-table.webp"} voile="bg-gradient-to-r from-encre/85 via-encre/55 to-encre/20" className="flex min-h-[92vh] items-center pb-32 pt-32">
       <div className="conteneur apparait">
-        <p className="surtitre !text-white/75">Soutien scolaire · Tahiti</p>
+        <p className="surtitre !text-corail">Soutien scolaire · Tahiti</p>
         <h1 className="mt-5 max-w-3xl text-[clamp(2.8rem,6.5vw,5.2rem)] leading-[1.02]">
-          Apprendre <em className="text-lagon-clair">autrement</em>,<br />progresser ensemble.
+          Apprendre <span className="text-corail">autrement</span>,<br />progresser ensemble.
         </h1>
         <p className="mt-7 max-w-xl text-xl leading-relaxed text-white/80">
           Pas seulement faire les devoirs : comprendre ses difficultés, prendre de bonnes méthodes et
@@ -35,7 +35,7 @@ function Chiffres() {
   ];
   return (
     <section className="conteneur relative z-10 -mt-16">
-      <div className="grid gap-6 rounded-2xl bg-white p-6 sm:grid-cols-3 sm:p-8">
+      <div className="grid gap-6 rounded-3xl border-b-8 border-corail bg-white p-6 shadow-carte sm:grid-cols-3 sm:p-8">
         {items.map(({ icone: I, val, txt }) => (
           <div key={val} className="flex items-center gap-4">
             <span className="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-lagon-clair text-lagon-fonce"><I className="h-7 w-7" /></span>
@@ -83,7 +83,7 @@ function Methode() {
     { i: Sparkles, t: "Confiance", d: "Chaque progrès est valorisé. La réussite redevient possible — et ça change tout." },
   ];
   return (
-    <FondImage image="/images/salle-verte.webp" voile="bg-encre/80" className="py-28">
+    <FondImage image="/images/salle-verte.webp" voile="bg-gradient-to-br from-encre/90 to-lagon-fonce/80" className="py-28">
       <div className="conteneur">
         <Titre clair sur="Notre philosophie" titre="Plus qu'une aide aux devoirs" intro="Un environnement bienveillant et stimulant, où l'on apprend à apprendre." />
         <ol className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">

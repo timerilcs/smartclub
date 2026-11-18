@@ -36,7 +36,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 {l.label}
               </NavLink>
             ))}
-            <Link to="/inscription" className={`rounded-full px-5 py-2 text-[15px] font-semibold ring-1 transition-colors ${surImage ? "ring-white/60 hover:bg-white hover:text-encre" : "ring-encre/25 hover:bg-encre hover:text-white"}`}>S'inscrire</Link>
+            <Link to="/inscription" className={`rounded-full px-5 py-2 text-[15px] font-semibold ring-1 transition-colors ${surImage ? "bg-corail text-encre ring-corail hover:bg-soleil" : "ring-encre/25 hover:bg-encre hover:text-white"}`}>S'inscrire</Link>
           </nav>
           <button onClick={() => setOuvert(o => !o)} className="p-2 lg:hidden" aria-label="Menu" aria-expanded={ouvert}>
             {ouvert ? <X /> : <Menu />}
@@ -56,24 +56,24 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
       <main id="contenu" className="flex-1">{children}</main>
 
-      <footer className="mt-24 bg-encre text-white">
+      <footer className="mt-24 border-t-8 border-corail bg-encre text-white">
         <div className="conteneur grid gap-10 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <Logo clair />
             <p className="mt-4 max-w-sm text-white/60">Apprendre autrement, progresser ensemble et prendre confiance en soi. Soutien scolaire en petits groupes, du primaire au lycée.</p>
           </div>
           <div>
-            <h3 className="mb-4 font-sans text-xs font-semibold uppercase tracking-[.2em] text-white/50">Le club</h3>
+            <h3 className="mb-4 font-sans text-xs font-semibold uppercase tracking-[.2em] text-corail">Le club</h3>
             <ul className="space-y-2 text-white/80">
               {liens.map(l => <li key={l.to}><Link className="hover:text-white" to={l.to}>{l.label}</Link></li>)}
               <li><Link className="hover:text-white" to="/inscription">Inscription</Link></li>
             </ul>
           </div>
           <div>
-            <h3 className="mb-4 font-sans text-xs font-semibold uppercase tracking-[.2em] text-white/50">Nous joindre</h3>
+            <h3 className="mb-4 font-sans text-xs font-semibold uppercase tracking-[.2em] text-corail">Nous joindre</h3>
             <ul className="space-y-3 text-white/80">
-              <li className="flex gap-2"><MapPin className="h-5 w-5 shrink-0 text-lagon" /> Tahiti, Polynésie française</li>
-              <li className="flex gap-2"><Mail className="h-5 w-5 shrink-0 text-lagon" /><Link to="/contact" className="hover:text-white">Écrire au club</Link></li>
+              <li className="flex gap-2"><MapPin className="h-5 w-5 shrink-0 text-corail" /> Tahiti, Polynésie française</li>
+              <li className="flex gap-2"><Mail className="h-5 w-5 shrink-0 text-corail" /><Link to="/contact" className="hover:text-white">Écrire au club</Link></li>
             </ul>
           </div>
         </div>
