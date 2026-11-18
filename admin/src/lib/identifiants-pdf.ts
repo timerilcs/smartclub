@@ -91,7 +91,7 @@ function drawLabel(
   doc.roundedRect(x, y, LABEL_W, LABEL_H, 2, 2, "FD");
 
   // Bandeau en-tête coloré
-  doc.setFillColor(59, 130, 246); // bleu Polykids
+  doc.setFillColor(10, 35, 80); // bleu marine SmartClub
   doc.roundedRect(x, y, LABEL_W, 8, 2, 2, "F");
   // Masquer les coins ronds en bas du bandeau
   doc.setFillColor(59, 130, 246);

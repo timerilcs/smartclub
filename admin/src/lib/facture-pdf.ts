@@ -76,7 +76,7 @@ function loadImageAsBase64(src: string): Promise<string> {
     const img = new Image();
     img.crossOrigin = "anonymous";
     img.onload = () => {
-      const MAX = 256;
+      const MAX = 700;
       const scale = Math.min(MAX / img.naturalWidth, MAX / img.naturalHeight, 1);
       const canvas = document.createElement("canvas");
       canvas.width = Math.round(img.naturalWidth * scale);
@@ -114,10 +114,10 @@ async function buildFactureDoc(
 
   // === LOGO IMAGE ===
   try {
-    const { default: logoUrl } = await import("@/assets/logo.svg");
+    const { default: logoUrl } = await import("@/assets/logo-smartclub.png");
     const logoBase64 = await loadImageAsBase64(logoUrl);
-    const logoH = 36;
-    const logoW = 36;
+    const logoW = 64;
+    const logoH = logoW * 131 / 700;
     doc.addImage(logoBase64, "PNG", (pw - logoW) / 2, y, logoW, logoH);
     y += logoH + 4;
   } catch {

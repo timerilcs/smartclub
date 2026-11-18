@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { SchoolYearSelector } from "@/components/SchoolYearSelector";
 import { useAuth } from "@/hooks/useAuth";
-import logo from "@/assets/logo.svg";
+import logo from "@/assets/logo-icone.png";
 import {
   LayoutDashboard, Users, CalendarDays, CreditCard, Settings,
   Menu, ChevronLeft, LogOut, Laptop, Clock, MapPin, BarChart3, MessageSquare,

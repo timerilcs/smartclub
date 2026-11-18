@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { LogIn, Loader2, ShieldAlert } from "lucide-react";
-import logo from "@/assets/logo.svg";
+import logo from "@/assets/logo-smartclub.png";
 
 export default function AuthPage() {
   const [email, setEmail] = useState("");
@@ -58,8 +58,8 @@ export default function AuthPage() {
     <div className="min-h-screen flex items-center justify-center bg-background px-4">
       <div className="w-full max-w-sm space-y-8">
         <div className="text-center space-y-2">
-          <img src={logo} alt="SmartClub" className="mx-auto h-20 w-20 rounded-2xl object-contain" />
-          <h1 className="font-display text-2xl font-bold text-foreground">SmartClub Admin</h1>
+          <img src={logo} alt="SmartClub" className="mx-auto h-12 w-auto object-contain" />
+          <h1 className="font-display text-2xl font-bold text-foreground">Administration</h1>
           <p className="text-sm text-muted-foreground">Connectez-vous à votre compte</p>
         </div>
 
