@@ -6,7 +6,7 @@ export default function Home() {
         <p style={{ fontSize: "1.25rem", marginTop: 12 }}>
           Apprendre autrement, progresser ensemble et prendre confiance en soi.
         </p>
-        <p style={{ opacity: 0.6 }}>Site en construction – bientôt en ligne.</p>
+        <p style={{ opacity: 0.6 }}>Site en construction – bientôt en ligne. (v2)</p>
       </div>
     </main>
   );
