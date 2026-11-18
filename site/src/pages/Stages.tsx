@@ -12,12 +12,12 @@ const types = [
 export default function Stages() {
   return (
     <>
-      <EnTetePage couleur="corail" sur="Pendant les vacances" titre={<>Les stages <span className="surligne">SmartClub</span></>}
+      <EnTetePage image="/images/salle-large.webp" couleur="corail" sur="Pendant les vacances" titre={<>Les stages <span className="surligne">SmartClub</span></>}
         intro="En complément du suivi régulier, des stages intensifs pendant les vacances scolaires pour repartir du bon pied." />
       <section className="conteneur grid gap-6 py-20 sm:grid-cols-2 lg:grid-cols-4">
         {types.map(({ i: I, t, d }) => (
           <div key={t} className="carte carte-hover">
-            <I className="h-9 w-9 text-corail" />
+            <I className="h-9 w-9 text-lagon" />
             <h2 className="mt-5 font-sans text-xl font-bold">{t}</h2>
             <p className="mt-2 text-encre/70">{d}</p>
           </div>

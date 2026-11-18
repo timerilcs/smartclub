@@ -10,5 +10,5 @@ export function Merci({ titre, texte }: { titre: string; texte: string }) {
 }
 export function Erreur({ msg }: { msg: string | null }) {
   if (!msg) return null;
-  return <p role="alert" className="rounded-xl bg-corail-clair px-4 py-3 font-semibold text-corail">{msg}</p>;
+  return <p role="alert" className="rounded-xl bg-corail-clair px-4 py-3 font-semibold text-lagon">{msg}</p>;
 }

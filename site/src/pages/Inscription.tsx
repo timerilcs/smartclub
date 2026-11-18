@@ -57,7 +57,7 @@ export default function Inscription() {
 
   return (
     <>
-      <EnTetePage couleur="corail" sur="Inscription" titre={<>Rejoindre <span className="surligne">SmartClub</span></>}
+      <EnTetePage image="/images/eleve-bureau.webp" couleur="corail" sur="Inscription" titre={<>Rejoindre <span className="surligne">SmartClub</span></>}
         intro="Remplissez ce formulaire en 2 minutes. Nous vous recontactons pour confirmer le groupe et l'horaire — aucun paiement en ligne." />
       <section className="conteneur max-w-4xl py-16">
         {etat === "ok" ? (
@@ -71,7 +71,7 @@ export default function Inscription() {
                   <label key={o.id} className="cursor-pointer">
                     <input type="radio" name="formule" className="peer sr-only" checked={formule === o.id}
                       onChange={() => setF(v => ({ ...v, formule: o.id, id_agenda: "", id_forfait: "" }))} />
-                    <span className={`block h-full rounded-2xl border-[1.5px] border-encre bg-white p-5 transition-all peer-checked:shadow-[5px_5px_0_#13213c] peer-focus-visible:ring-4 peer-focus-visible:ring-soleil ${o.couleur}`}>
+                    <span className={`block h-full rounded-2xl bg-white p-5 ring-1 ring-encre/10 transition-all peer-checked:ring-2 peer-checked:ring-lagon peer-focus-visible:ring-4 peer-focus-visible:ring-lagon/40 ${o.couleur}`}>
                       <span className="block text-lg font-bold">{o.nom}</span>
                       <span className="text-sm text-encre/65">{o.sous}</span>
                     </span>

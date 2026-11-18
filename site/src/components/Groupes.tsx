@@ -7,11 +7,11 @@ export function ListeGroupes({ filtre, vide }: { filtre: (g: Groupe) => boolean;
   const groupes = data.filter(filtre);
   if (loading) return <p className="text-encre/50">Chargement des créneaux…</p>;
   if (!groupes.length)
-    return <p className="rounded-2xl border-[1.5px] border-dashed border-encre/30 bg-white/60 p-6 text-encre/70">{vide}</p>;
+    return <p className="rounded-2xl border border-dashed border-encre/30 bg-white/60 p-6 text-encre/70">{vide}</p>;
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {groupes.map(g => (
-        <div key={g.id_agenda} className="flex flex-col gap-3 rounded-2xl border-[1.5px] border-encre bg-white p-5">
+        <div key={g.id_agenda} className="flex flex-col gap-3 rounded-2xl bg-white p-6 ring-1 ring-encre/10">
           <p className="text-lg font-bold">{g.infocourte || g.info || "Groupe"}</p>
           <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-encre/70">
             {g.debut && <span className="flex items-center gap-1.5"><CalendarDays className="h-4 w-4" />{dateCourte(g.debut)}{g.fin && ` → ${dateCourte(g.fin)}`}</span>}

@@ -17,7 +17,7 @@ export default function Tarifs() {
   const autres = forfaits.filter(f => !/kids/i.test(f.nom));
   return (
     <>
-      <EnTetePage couleur="lagon" sur="Tarifs & horaires" titre={<>Des tarifs <span className="surligne">clairs</span>, par période de 5 semaines.</>}
+      <EnTetePage image="/images/salle-verte.webp" couleur="lagon" sur="Tarifs & horaires" titre={<>Des tarifs <span className="surligne">clairs</span>, par période de 5 semaines.</>}
         intro="Les séances durent 1h30 et suivent le calendrier scolaire. Pas de frais cachés." />
       <section className="conteneur grid gap-8 py-20 lg:grid-cols-[1.3fr_1fr]">
         <div className="carte bg-corail-clair">

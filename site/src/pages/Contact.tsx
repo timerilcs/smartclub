@@ -21,7 +21,7 @@ export default function Contact() {
 
   return (
     <>
-      <EnTetePage sur="Contact" titre={<>Parlons de <span className="surligne">votre enfant</span></>}
+      <EnTetePage image="/images/selfie-duo.webp" sur="Contact" titre={<>Parlons de <span className="surligne">votre enfant</span></>}
         intro="Une question sur nos accompagnements, un horaire, un tarif ? Écrivez-nous, nous vous répondons rapidement." />
       <section className="conteneur grid gap-12 py-20 lg:grid-cols-[1fr_1.4fr]">
         <div className="space-y-5">

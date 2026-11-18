@@ -21,7 +21,7 @@ export default function AvisPage() {
 
   return (
     <>
-      <EnTetePage couleur="lagon" sur="Avis" titre={<>La parole aux <span className="surligne">familles</span></>}
+      <EnTetePage image="/images/groupe-selfie.webp" couleur="lagon" sur="Avis" titre={<>La parole aux <span className="surligne">familles</span></>}
         intro={moyenne ? `Note moyenne : ${moyenne}/5 sur ${data.length} avis.` : "Les premiers retours des familles et des élèves arrivent bientôt."} />
       <section className="conteneur grid gap-12 py-20 lg:grid-cols-[1.5fr_1fr]">
         <div className="columns-1 gap-6 space-y-6 md:columns-2">
@@ -31,7 +31,7 @@ export default function AvisPage() {
             <figure key={a.id} className="carte break-inside-avoid">
               <Etoiles n={a.note} />
               <blockquote className="mt-3 leading-relaxed">« {a.message} »</blockquote>
-              <figcaption className="mt-4 font-hand text-2xl text-lagon-fonce">— {a.nom}</figcaption>
+              <figcaption className="mt-4 text-sm font-semibold text-lagon-fonce">— {a.nom}</figcaption>
             </figure>
           ))}
         </div>
