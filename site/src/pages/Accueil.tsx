@@ -88,7 +88,8 @@ function Methode() {
   return (
     <FondImage image="/images/salle-verte.webp" voile="bg-gradient-to-br from-encre/90 to-lagon-fonce/80" className="py-28">
       <div className="conteneur">
-        <Titre clair sur="Notre philosophie" titre="Plus qu'une aide aux devoirs" intro="Un environnement bienveillant et stimulant, où l'on apprend à apprendre." />
+        <p className="philosophie-surtitre">Notre philosophie</p>
+        <Titre clair titre="Plus qu'une aide aux devoirs" intro="Un environnement bienveillant et stimulant, où l'on apprend à apprendre." />
         <ol className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {etapes.map(({ i: I, t, d }, n) => (
             <li key={t} className="relative rounded-2xl bg-white/10 p-7 backdrop-blur-sm">
