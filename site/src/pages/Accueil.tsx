@@ -2,14 +2,11 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Users, TrendingUp, GraduationCap, ChartNoAxesColumnIncreasing, Pencil, CirclePlay, Lightbulb, Compass, Sparkles, Target, Heart, ShieldCheck, Home as Maison } from "lucide-react";
 import { Titre } from "@/components/Titre";
 import { AppelAction, AvisApercu, FaqBloc, FondImage, Video } from "@/components/Blocs";
-import { useMedia } from "@/lib/data";
 
 function Hero() {
-  const { data: medias } = useMedia("accueil");
-  const visuel = medias.find(m => m.section === "hero" && m.type === "image");
   return (
     <section className="accueil-hero" aria-labelledby="accueil-titre">
-      <div className="hero-photo"><img src={visuel?.url || "/images/groupe-table.webp"} alt="Les élèves et leur accompagnatrice réunis autour d'une table au SmartClub" fetchPriority="high" /></div>
+      <div className="hero-photo"><img src="/images/sourires-table-etude.png" alt="Les élèves et leur accompagnatrice réunis autour d'une table au SmartClub" fetchPriority="high" /></div>
       <div className="hero-voile" />
       <svg className="hero-feuilles" viewBox="0 0 220 420" aria-hidden="true"><g fill="currentColor"><path d="M0 55Q65 10 150 12Q100 55 0 55M0 58Q100 40 205 100Q100 105 0 58M0 65Q95 95 156 192Q62 152 0 65M0 80Q55 160 60 260Q5 188 0 80M0 125Q-5 220 30 320Q48 230 0 125M0 50Q30 5 62 0H0Z" /><path d="M0 405Q45 300 170 260Q82 329 0 405M0 410Q50 350 200 350Q82 384 0 410" /></g></svg>
       <div className="conteneur hero-contenu apparait">

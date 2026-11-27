@@ -32,8 +32,8 @@
 .apparait { animation: apparait .7s cubic-bezier(.2,.7,.2,1) both; }
 .flotte { animation: none; }
 .site-header-accueil { background: linear-gradient(110deg, #042544, #083e6b); border-bottom: 1px solid #2783b966; }
-.site-header-accueil .conteneur { max-width: 1440px; }
-.site-header-accueil img { height: auto; width: clamp(180px, 20vw, 265px); }
+.site-header-accueil img { height: auto; width: clamp(180px, 18vw, 220px); }
+.site-header-accueil nav { gap: 20px; }
 .header-inscription { background: #ffcc00; color: #072d51; }
 .header-inscription:hover { background: #ffdc43; }
 .accueil-hero { position: relative; isolation: isolate; overflow: hidden; min-height: 810px; padding: 148px 0 170px; color: white; background: linear-gradient(135deg, #042443 10%, #063867 60%, #087bb8); }
