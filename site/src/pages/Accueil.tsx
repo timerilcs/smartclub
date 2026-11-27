@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Users, Clock, CalendarRange, Lightbulb, Compass, Sparkles, Target, Heart, ShieldCheck, Home as Maison } from "lucide-react";
+import { ArrowRight, Users, TrendingUp, GraduationCap, ChartNoAxesColumnIncreasing, Pencil, CirclePlay, Lightbulb, Compass, Sparkles, Target, Heart, ShieldCheck, Home as Maison } from "lucide-react";
 import { Titre } from "@/components/Titre";
 import { AppelAction, AvisApercu, FaqBloc, FondImage, Video } from "@/components/Blocs";
 import { useMedia } from "@/lib/data";
@@ -8,38 +8,43 @@ function Hero() {
   const { data: medias } = useMedia("accueil");
   const visuel = medias.find(m => m.section === "hero" && m.type === "image");
   return (
-    <FondImage image={visuel?.url || "/images/groupe-table.webp"} voile="bg-gradient-to-r from-encre/85 via-encre/55 to-encre/20" className="flex min-h-[92vh] items-center pb-32 pt-32">
-      <div className="conteneur apparait">
-        <p className="surtitre !text-corail">Soutien scolaire · Tahiti</p>
-        <h1 className="mt-5 max-w-3xl text-[clamp(2.8rem,6.5vw,5.2rem)] leading-[1.02]">
-          Apprendre <span className="text-corail">autrement</span>,<br />progresser ensemble.
+    <section className="accueil-hero" aria-labelledby="accueil-titre">
+      <div className="hero-photo"><img src={visuel?.url || "/images/groupe-table.webp"} alt="Les élèves et leur accompagnatrice réunis autour d'une table au SmartClub" fetchPriority="high" /></div>
+      <div className="hero-voile" />
+      <svg className="hero-feuilles" viewBox="0 0 220 420" aria-hidden="true"><g fill="currentColor"><path d="M0 55Q65 10 150 12Q100 55 0 55M0 58Q100 40 205 100Q100 105 0 58M0 65Q95 95 156 192Q62 152 0 65M0 80Q55 160 60 260Q5 188 0 80M0 125Q-5 220 30 320Q48 230 0 125M0 50Q30 5 62 0H0Z" /><path d="M0 405Q45 300 170 260Q82 329 0 405M0 410Q50 350 200 350Q82 384 0 410" /></g></svg>
+      <div className="conteneur hero-contenu apparait">
+        <p className="hero-surtitre">Soutien scolaire · Tahiti</p>
+        <h1 id="accueil-titre">
+          Apprendre<br /><span>autrement</span>,<br /><span className="hero-suite">progresser ensemble.</span>
         </h1>
-        <p className="mt-7 max-w-xl text-xl leading-relaxed text-white/80">
+        <p className="hero-description">
           Pas seulement faire les devoirs : comprendre ses difficultés, prendre de bonnes méthodes et
           reprendre confiance en soi, en petits groupes de 3 à 5 élèves.
         </p>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <Link to="/inscription" className="btn-blanc">Inscrire mon enfant <ArrowRight className="h-4 w-4" /></Link>
-          <Link to="/accompagnements" className="btn-verre">Découvrir le club</Link>
+        <div className="hero-actions">
+          <Link to="/inscription" className="btn hero-inscription"><Pencil aria-hidden="true" />Inscrire mon enfant <ArrowRight aria-hidden="true" /></Link>
+          <Link to="/accompagnements" className="btn hero-decouvrir"><CirclePlay aria-hidden="true" />Découvrir le club</Link>
         </div>
       </div>
-    </FondImage>
+      <svg className="hero-vague" viewBox="0 0 1440 85" preserveAspectRatio="none" aria-hidden="true"><path d="M0 65Q180 0 490 45T1000 50T1440 25V85H0Z" fill="#edf6ff" /></svg>
+    </section>
   );
 }
 
 function Chiffres() {
   const items = [
-    { icone: Users, val: "3 à 5", txt: "élèves par groupe" },
-    { icone: Clock, val: "1h30", txt: "par séance" },
-    { icone: CalendarRange, val: "5 sem.", txt: "par période, au rythme de l'école" },
+    { icone: Users, val: "Petits groupes", txt: "(3 à 5 élèves)" },
+    { icone: TrendingUp, val: "Méthodes efficaces", txt: "et personnalisées" },
+    { icone: GraduationCap, val: "Confiance", txt: "en soi" },
+    { icone: ChartNoAxesColumnIncreasing, val: "Progression", txt: "durable" },
   ];
   return (
-    <section className="conteneur relative z-10 -mt-16">
-      <div className="grid gap-6 rounded-3xl border-b-8 border-corail bg-white p-6 shadow-carte sm:grid-cols-3 sm:p-8">
+    <section className="conteneur hero-benefices" aria-label="Les atouts du SmartClub">
+      <div className="benefices-grille">
         {items.map(({ icone: I, val, txt }) => (
-          <div key={val} className="flex items-center gap-4">
-            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-xl bg-lagon-clair text-lagon-fonce"><I className="h-7 w-7" /></span>
-            <div><p className="font-display text-3xl">{val}</p><p className="text-encre/60">{txt}</p></div>
+          <div key={val} className="benefice">
+            <span className="benefice-icone"><I aria-hidden="true" /></span>
+            <div><p className="font-extrabold">{val}</p><p>{txt}</p></div>
           </div>
         ))}
       </div>

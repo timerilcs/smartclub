@@ -31,4 +31,63 @@
 @keyframes apparait { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 .apparait { animation: apparait .7s cubic-bezier(.2,.7,.2,1) both; }
 .flotte { animation: none; }
+.site-header-accueil { background: linear-gradient(110deg, #042544, #083e6b); border-bottom: 1px solid #2783b966; }
+.site-header-accueil .conteneur { max-width: 1440px; }
+.site-header-accueil img { height: auto; width: clamp(180px, 20vw, 265px); }
+.header-inscription { background: #ffcc00; color: #072d51; }
+.header-inscription:hover { background: #ffdc43; }
+.accueil-hero { position: relative; isolation: isolate; overflow: hidden; min-height: 810px; padding: 148px 0 170px; color: white; background: linear-gradient(135deg, #042443 10%, #063867 60%, #087bb8); }
+.hero-photo { position: absolute; z-index: -3; top: 96px; right: -9%; width: 76%; height: calc(100% - 100px); overflow: hidden; border-bottom: 18px solid #ffcc00; border-radius: 0 0 45% 65%; transform: rotate(-3deg); }
+.hero-photo img { width: 100%; height: 110%; object-fit: cover; object-position: center 35%; transform: rotate(3deg) scale(1.08); }
+.hero-voile { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, #042b50 0%, #04315a 31%, #04315af2 38%, #04315a70 51%, transparent 66%); }
+.hero-contenu { max-width: 1440px; position: relative; z-index: 1; }
+.hero-surtitre { font-size: 17px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.hero-surtitre::after { content: ''; display: block; width: 70px; height: 6px; margin-top: 12px; border-radius: 9px; background: #ffcc00; }
+.accueil-hero h1 { margin-top: 18px; font-family: 'Nunito', sans-serif; font-size: clamp(48px, 4.7vw, 78px); font-weight: 800; line-height: 1.06; letter-spacing: -.035em; }
+.accueil-hero h1 > span { color: #ffcc00; }
+.accueil-hero h1 .hero-suite { color: white; font-size: .86em; }
+.hero-description { max-width: 600px; margin-top: 25px; font-size: 21px; line-height: 1.45; color: #edf6ff; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 32px; }
+.hero-actions .btn { min-height: 62px; padding: 14px 28px; font-size: 19px; }
+.hero-inscription { background: linear-gradient(#ffda00, #ffbd00); color: #042b50; }
+.hero-inscription:hover { background: #ffdd37; transform: translateY(-2px); }
+.hero-decouvrir { border: 3px solid white; background: #052b5380; color: white; }
+.hero-decouvrir:hover { background: #125786; }
+.hero-decouvrir svg { color: #26baf4; }
+.hero-feuilles { position: absolute; left: -35px; top: 70px; width: 185px; height: 650px; z-index: -1; color: #087db0; opacity: .27; pointer-events: none; }
+.hero-vague { position: absolute; bottom: -1px; left: 0; width: 100%; height: 65px; z-index: -1; }
+.hero-benefices { position: relative; z-index: 2; max-width: 1440px; margin-top: -100px; }
+.benefices-grille { display: grid; grid-template-columns: repeat(4, 1fr); border-radius: 32px; background: #fff; box-shadow: 0 24px 65px #1959a326; padding: 28px 20px; }
+.benefice { display: flex; align-items: center; justify-content: center; gap: 17px; padding: 0 18px; font-size: 18px; line-height: 1.35; }
+.benefice + .benefice { border-left: 1px solid #d4e4f6; }
+.benefice-icone { display: grid; place-items: center; flex-shrink: 0; width: 64px; height: 64px; border-radius: 50%; background: #e3efff; color: #006ac6; }
+.benefice-icone svg { width: 36px; height: 36px; stroke-width: 2.2; }
+body:has(.accueil-hero) { background: #edf6ff; }
+@media (min-width: 1600px) { .accueil-hero { min-height: 845px; } }
+@media (max-width: 1199px) {
+  .site-header nav { gap: 20px; }
+  .accueil-hero { min-height: 760px; }
+  .hero-description { max-width: 510px; font-size: 19px; }
+  .hero-actions { gap: 14px; }
+  .hero-actions .btn { padding: 12px 20px; font-size: 17px; }
+  .benefice { gap: 12px; padding: 0 12px; font-size: 16px; }
+  .benefice-icone { width: 52px; height: 52px; }
+}
+@media (max-width: 767px) {
+  .accueil-hero { min-height: auto; padding: 125px 0 370px; }
+  .accueil-hero h1 { font-size: clamp(40px, 7.5vw, 58px); }
+  .hero-surtitre { font-size: 14px; }
+  .hero-description { max-width: 540px; font-size: 18px; }
+  .hero-photo { top: auto; bottom: 0; right: -5%; width: 110%; height: 350px; border-bottom-width: 12px; border-radius: 0 0 45% 35%; transform: none; }
+  .hero-photo img { transform: none; height: 100%; object-position: center 36%; }
+  .hero-voile { background: linear-gradient(180deg, #042b50 0%, #04315a 52%, #04315a00 72%); }
+  .hero-actions { gap: 12px; margin-top: 25px; }
+  .hero-actions .btn { min-height: 54px; }
+  .hero-benefices { margin-top: -35px; }
+  .benefices-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 0; padding: 24px 12px; border-radius: 24px; }
+  .benefice { justify-content: flex-start; align-items: flex-start; flex-direction: column; font-size: 16px; padding: 0 16px; gap: 10px; }
+  .benefice:nth-child(3) { border-left: 0; }
+  .hero-feuilles { left: auto; right: -65px; transform: rotate(180deg); opacity: .15; }
+}
+@media (max-width: 380px) { .hero-actions .btn { width: 100%; } }
 @media (prefers-reduced-motion: reduce) { .apparait { animation: none; } }

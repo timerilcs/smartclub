@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Menu, X, Mail, MapPin } from "lucide-react";
+import { Menu, X, Mail, MapPin, UserRound } from "lucide-react";
 import { Logo } from "./Logo";
 import { trackPage } from "@/lib/data";
 
@@ -25,8 +25,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-screen flex-col">
       <a href="#contenu" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 btn-primaire">Aller au contenu</a>
 
-      {/* Menu léger, sans fond, posé sur l'image */}
-      <header className={`${surImage ? "absolute inset-x-0 top-0" : "relative"} z-40 ${txt}`}>
+      <header className={`site-header ${pathname === "/" ? "site-header-accueil" : ""} ${surImage ? "absolute inset-x-0 top-0" : "relative"} z-40 ${txt}`}>
         <div className="conteneur flex h-24 items-center justify-between">
           <Link to="/" aria-label="SmartClub – accueil"><Logo clair={surImage} /></Link>
           <nav className="hidden items-center gap-8 lg:flex">
@@ -36,7 +35,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 {l.label}
               </NavLink>
             ))}
-            <Link to="/inscription" className={`rounded-full px-5 py-2 text-[15px] font-semibold ring-1 transition-colors ${surImage ? "bg-corail text-encre ring-corail hover:bg-soleil" : "ring-encre/25 hover:bg-encre hover:text-white"}`}>S'inscrire</Link>
+            <Link to="/inscription" className="btn header-inscription"><UserRound className="h-5 w-5" aria-hidden="true" />S'inscrire</Link>
           </nav>
           <button onClick={() => setOuvert(o => !o)} className="p-2 lg:hidden" aria-label="Menu" aria-expanded={ouvert}>
             {ouvert ? <X /> : <Menu />}
