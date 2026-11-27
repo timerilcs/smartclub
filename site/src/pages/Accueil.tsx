@@ -27,6 +27,7 @@ function Hero() {
         </div>
       </div>
       <svg className="hero-vague" viewBox="0 0 1440 85" preserveAspectRatio="none" aria-hidden="true"><path d="M0 65Q180 0 490 45T1000 50T1440 25V85H0Z" fill="#edf6ff" /></svg>
+      <img className="hero-hibiscus" src="/images/hibiscus-jaune.png" alt="" aria-hidden="true" width={1254} height={1200} />
     </section>
   );
 }
