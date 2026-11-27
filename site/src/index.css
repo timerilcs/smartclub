@@ -57,13 +57,14 @@
 .hero-feuilles { position: absolute; left: -35px; top: 70px; width: 185px; height: 650px; z-index: -1; color: #087db0; opacity: .27; pointer-events: none; }
 .hero-vague { position: absolute; bottom: -1px; left: 0; width: 100%; height: 65px; z-index: -1; }
 .hero-hibiscus { position: absolute; bottom: 35px; left: 4px; z-index: 2; width: clamp(105px, 11vw, 195px); height: auto; pointer-events: none; transform: rotate(-12deg); }
-.hero-benefices { position: relative; z-index: 2; max-width: 1440px; margin-top: -100px; }
+.hero-benefices { position: relative; z-index: 2; margin-top: 0; }
 .benefices-grille { display: grid; grid-template-columns: repeat(4, 1fr); border-radius: 32px; background: #fff; box-shadow: 0 24px 65px #1959a326; padding: 28px 20px; }
 .benefice { display: flex; align-items: center; justify-content: center; gap: 17px; padding: 0 18px; font-size: 18px; line-height: 1.35; }
 .benefice + .benefice { border-left: 1px solid #d4e4f6; }
 .benefice-icone { display: grid; place-items: center; flex-shrink: 0; width: 64px; height: 64px; border-radius: 50%; background: #e3efff; color: #006ac6; }
 .benefice-icone svg { width: 36px; height: 36px; stroke-width: 2.2; }
 body:has(.accueil-hero) { background: #edf6ff; }
+@media (min-width: 1440px) { .hero-benefices { margin-top: -100px; } }
 @media (min-width: 1600px) { .accueil-hero { min-height: 845px; } }
 @media (max-width: 1199px) {
   .site-header nav { gap: 20px; }
@@ -85,7 +86,7 @@ body:has(.accueil-hero) { background: #edf6ff; }
   .hero-voile { background: linear-gradient(180deg, #042b50 0%, #04315a 52%, #04315a00 72%); }
   .hero-actions { gap: 12px; margin-top: 25px; }
   .hero-actions .btn { min-height: 54px; }
-  .hero-benefices { margin-top: -35px; }
+  .hero-benefices { margin-top: 0; }
   .benefices-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 0; padding: 24px 12px; border-radius: 24px; }
   .benefice { justify-content: flex-start; align-items: flex-start; flex-direction: column; font-size: 16px; padding: 0 16px; gap: 10px; }
   .benefice:nth-child(3) { border-left: 0; }
