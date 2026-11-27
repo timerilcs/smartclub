@@ -31,6 +31,8 @@
 @keyframes apparait { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 .apparait { animation: apparait .7s cubic-bezier(.2,.7,.2,1) both; }
 .flotte { animation: none; }
+.philosophie-surtitre { display: flex; align-items: center; justify-content: center; gap: clamp(12px, 3vw, 24px); margin-bottom: 20px; color: white; font-family: 'Nunito', sans-serif; font-size: clamp(22px, 3.5vw, 34px); font-weight: 800; line-height: 1.2; text-align: center; }
+.philosophie-surtitre::before, .philosophie-surtitre::after { content: ''; flex: 0 1 70px; min-width: 24px; height: 6px; border-radius: 999px; background: #ffcc00; }
 .site-header-accueil { background: linear-gradient(110deg, #042544, #083e6b); border-bottom: 1px solid #2783b966; }
 .site-header-accueil img { height: auto; width: clamp(180px, 18vw, 220px); }
 .site-header-accueil nav { gap: 20px; }
@@ -56,6 +58,8 @@
 .hero-decouvrir svg { color: #26baf4; }
 .hero-feuilles { position: absolute; left: -35px; top: 70px; width: 185px; height: 650px; z-index: -1; color: #087db0; opacity: .27; pointer-events: none; }
 .hero-vague { position: absolute; bottom: -1px; left: 0; width: 100%; height: 65px; z-index: -1; }
+/* Réserve la hauteur de la fleur, rotation comprise, sous les boutons. */
+.accueil-hero { padding-bottom: 280px; }
 .hero-hibiscus { position: absolute; bottom: 35px; left: 4px; z-index: 2; width: clamp(105px, 11vw, 195px); height: auto; pointer-events: none; transform: rotate(-12deg); }
 .hero-benefices { position: relative; z-index: 2; margin-top: 0; }
 .benefices-grille { display: grid; grid-template-columns: repeat(4, 1fr); border-radius: 32px; background: #fff; box-shadow: 0 24px 65px #1959a326; padding: 28px 20px; }
